@@ -1,0 +1,51 @@
+.container{
+    padding-left: 0;
+    padding-right: 0;
+    justify-content: space-around;
+   
+}
+.rowg{
+   /* flex-wrap: wrap; */
+    
+   
+}
+.align{
+    /* display: inline-block; */
+    display: inline;
+     /* flex-direction: row;  */
+    justify-content: space-evenly;
+     align-items:center; 
+    align-content:center;
+    /* margin: 10px; */
+    /* flex-wrap: nowrap; */
+    /* flex-direction: row; */
+   
+    /* position: relative; */
+    
+}
+.card{
+display: inline-block;
+    text-align:center;
+   flex-wrap: wrap;
+    justify-content: space-around;
+}
+.card-header{
+    text-align: center;
+    font-weight: 500;
+    /* align-self: center;
+    text-justify: distribute; */
+    
+}
+.card-title{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif */
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    /* font-family:Georgia, 'Times New Roman', Times, serif */
+    /* font-family:Verdana, Geneva, Tahoma, sans-serif; */
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: 550;
+    font-size:x-large;
+    /* font-family:'Times New Roman', Times, serif; */
+}
+
