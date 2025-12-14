@@ -1,0 +1,53 @@
+*{
+    color: aqua;
+}
+.navig{
+    background-color: rgb(240, 171, 236);
+    display: flex;
+    justify-content: space-evenly;
+} 
+a{
+    text-decoration: none;
+    color: rgb(134, 14, 14);
+    /* background-color: aqua; */
+}
+li{
+    list-style-type: none;
+    /* background-color:rgb(254, 255, 255); */
+
+}
+.outer{
+    height: 400px;
+    width: 400px;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;  
+    /* along main axis */
+    align-items: center;
+    /* along cross axis */
+}
+.inner{
+    height: 100px;
+    width: 100px;
+    background-color: brown;
+}
+/* .navig{    border: 2px black;
+     display: inline; 
+     flex-direction: row; 
+    background-color: blue;
+    text-decoration: none;
+    list-style:none;
+
+} */
+
+
+/* #box1{
+    border: 2px black;
+    display: inline;
+    background-color: cadetblue;
+}
+li{
+    display: inline;
+    display: flex;
+    background-color: rgb(162, 113, 207);
+} */

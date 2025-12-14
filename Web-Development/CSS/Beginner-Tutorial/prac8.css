@@ -1,0 +1,29 @@
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    font-style: normal;
+    font-variant:normal;
+    font-stretch:extra-expanded;
+    
+}
+div{position:absolute;
+    top:50px;left: 50px;
+    height:100px;
+    width:100px;
+       /* background-color: #8ecae6; */
+       border:10px solid #219ebc;
+       border-left:10px solid #023047;
+
+       /* border-color:2px solid #000000; */
+       /* border-left: 10px;  */
+       /* border-radius: 100px/100%; */
+       border-radius: 50%;
+       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+       transform: rotate(180deg);
+       animation: loading 0.5s linear infinite ;
+}
+@keyframes loading{
+    from{ transform:rotate(0deg);}
+    to{transform: rotate(360deg);}
+}

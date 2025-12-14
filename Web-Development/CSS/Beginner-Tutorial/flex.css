@@ -1,0 +1,17 @@
+*{
+margin-top: 0%;
+}
+#div1{
+    background-color: rgba(0,255,0,0.5);
+}#div2{
+    
+    background-color:#00ff0080;
+    opacity: 0.5;
+}#div3{
+    background-color: rgba(0,0,255,0.5);
+}
+
+p{
+    flex-direction: row;
+    justify-content: center;
+}

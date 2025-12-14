@@ -1,0 +1,644 @@
+
+.flashcard-side__content:not(:has(rise-math)) :not(img):not(.flashcard-side-flip__tooltip) {
+    transform: translateZ(0);
+}
+
+.flashcard-side__description--long {
+    align-items: center;
+    display: flex
+;
+    padding-block: 1.3rem 1rem;
+    padding-inline: 2.5rem;
+}
+.flashcard-side__description--long, .flashcard-side__description--long-overflow {
+    font-size: 2rem;
+    line-height: 1.5625;
+    text-align: start;
+}
+.flashcard-side__description {
+    font-family: var(--font-family-head);
+    font-weight: 300;
+    overflow: auto;
+    width: 100%;
+    word-break: break-word;
+}
+a, abbr, acronym, address, applet, article, aside, audio, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    margin-block: 0;
+    margin-inline: 0;
+    padding-block: 0;
+    padding-inline: 0;
+    vertical-align: initial;
+}
+* {
+    box-sizing: border-box;
+}
+user agent stylesheet
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+.flashcard-side__content {
+    color: var(--color-text);
+    display: flex
+;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+style attribute {
+    --color-background: #fafafa;
+}
+.block-card--white {
+    --color-text: #000;
+    --color-text-error: #de1d1d;
+    --color-theme-decorative: var(--color-theme);
+    --color-theme-decorative-fg: var(--color-theme-contrast, #fff);
+}
+.block-card {
+    --color-background-image-dark: #000000b3;
+    --color-background-image-light: #ffffffb3;
+    --color-background: #fff;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: background-color .1s linear;
+}
+.flashcard {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    margin-block: 0;
+    margin-inline: auto;
+    max-height: 46rem;
+    max-width: 46rem;
+    min-height: 28rem;
+    min-width: 28rem;
+    perspective: 1000px;
+    position: relative;
+    transform: scale(.9) translateZ(0);
+    transition: transform .5s cubic-bezier(.6,0,.4,1);
+    width: 100%;
+    z-index: 0;
+}
+user agent stylesheet
+li {
+    text-align: -webkit-match-parent;
+}
+.block-flashcards__wrapper {
+    box-sizing: initial;
+    margin-inline: auto;
+    max-width: 102rem;
+    padding-inline: 1.9999998rem 1.9999998rem;
+    text-align: center;
+}
+ol, ul {
+    list-style: none;
+}
+user agent stylesheet
+ol {
+    list-style-type: decimal;
+}
+style attribute {
+    --color-background: #ffffff;
+    box-shadow: rgb(255, 255, 255) 0px 1px 0px;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    --color-background-contrast: #000;
+    --color-background-contrast-complementary: #fff;
+    --color-background-contrast-rgb: 0, 0, 0;
+}
+.block-flashcards {
+    --border-block-start: 0.3rem solid var(--color-theme);
+    padding-block: 3rem;
+    padding-inline: 0;
+    transition: padding-block .5s, padding-inline .5s;
+}
+.bg {
+    --color-border-decorative: #0003;
+    --color-caption-placeholder-text: #aaa;
+    --color-carousel-arrow: #00000080;
+    --color-progress-track: #0000004d;
+    --color-text: #000;
+    --color-theme-decorative-fg: var(--color-theme-contrast, #fff);
+    --color-theme-decorative: var(--color-theme);
+    color: var(--color-text);
+    transition: color .1s linear;
+}
+.block-wrapper {
+    --color-background: #fff;
+    background-color: var(--color-background);
+    background-position: 50% 50%;
+    background-size: cover;
+    transition: background-color .1s linear, padding-block .5s linear, padding-inline .5s linear;
+}
+.lesson {
+    margin-block: 0;
+    margin-inline: auto;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    transition: padding-inline-start .3s;
+    word-wrap: break-word;
+    height: 100%;
+    word-break: break-word;
+}
+.classic {
+    --color-background: var(--color-theme);
+    --color-one-page-lesson-header-contrast: var(--color-theme-contrast);
+    --color-one-page-lesson-header-contrast-complementary: var(--color-theme-contrast-complementary);
+}
+.classic {
+    --color-one-page-cover-contrast: var(--color-theme-contrast);
+    --color-one-page-cover-contrast-complementary: var(--color-theme-contrast-complementary);
+}
+style attribute {
+    --ua-scrollbar-width: 17px;
+}
+body {
+    color: #000;
+    font-family: var(--font-family-ui);
+    font-size: 1.6em;
+    line-height: 1.5;
+    margin-block: 0;
+    margin-inline: 0;
+}
+body {
+    line-height: 1;
+}
+
+:root {
+    --color-theme-contrast-complementary-rgb: 0, 0, 0;
+    --color-theme-contrast-complementary: #000;
+    --color-theme-contrast-rgb: 255, 255, 255;
+    --color-theme-contrast: #fff;
+    --color-theme-rgb: 0, 67, 206;
+    --color-theme-tint: #e6ecfa;
+    --color-theme-transparent: #0043ce1A;
+    --color-theme: #0043ce;
+    --font-family-body: IBM Plex Sans2;
+    --font-family-head: IBM Plex Sans2;
+    --font-family-ui: Lato;
+    --mon-theme-font-body: var(--font-family-body);
+    --mon-theme-font-heading: var(--font-family-head);
+}
+:root {
+    --dir-x: 1;
+}
+
+:root {
+    --arc-font-size-base: 1;
+}
+
+:root, :host {
+    --fa-font-solid: normal 900 1em / 1 "Font Awesome 6 Solid";
+    --fa-font-regular: normal 400 1em / 1 "Font Awesome 6 Regular";
+    --fa-font-light: normal 300 1em / 1 "Font Awesome 6 Light";
+    --fa-font-thin: normal 100 1em / 1 "Font Awesome 6 Thin";
+    --fa-font-duotone: normal 900 1em / 1 "Font Awesome 6 Duotone";
+    --fa-font-sharp-solid: normal 900 1em / 1 "Font Awesome 6 Sharp";
+    --fa-font-brands: normal 400 1em / 1 "Font Awesome 6 Brands";
+}
+html {
+    font-size: 62.5%;
+    max-width: 100vw;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+::backdrop, :root {
+    --arc-internal-space: 0.8rem* var(--arc-internal-font-size);
+    --arc-internal-size: 0.8rem* var(--arc-internal-font-size);
+    --arc-space-0: 0;
+    --arc-space-0-25: calc(var(--arc-internal-space)* 0.25);
+    --arc-space-0-5: calc(var(--arc-internal-space)* 0.5);
+    --arc-space-0-75: calc(var(--arc-internal-space)* 0.75);
+    --arc-space-1: calc(var(--arc-internal-space));
+    --arc-space-1-5: calc(var(--arc-internal-space)* 1.5);
+    --arc-space-2: calc(var(--arc-internal-space)* 2);
+    --arc-space-2-5: calc(var(--arc-internal-space)* 2.5);
+    --arc-space-3: calc(var(--arc-internal-space)* 3);
+    --arc-space-4: calc(var(--arc-internal-space)* 4);
+    --arc-space-5: calc(var(--arc-internal-space)* 5);
+    --arc-space-6: calc(var(--arc-internal-space)* 6);
+    --arc-space-7: calc(var(--arc-internal-space)* 7);
+    --arc-space-8: calc(var(--arc-internal-space)* 8);
+    --arc-space-9: calc(var(--arc-internal-space)* 9);
+    --arc-space-10: calc(var(--arc-internal-space)* 10);
+    --arc-space-11: calc(var(--arc-internal-space)* 11);
+    --arc-space-12: calc(var(--arc-internal-space)* 12);
+    --arc-size-0: 0;
+    --arc-size-0-25: calc(var(--arc-internal-size)* 0.25);
+    --arc-size-0-5: calc(var(--arc-internal-size)* 0.5);
+    --arc-size-0-75: calc(var(--arc-internal-size)* 0.75);
+    --arc-size-1: calc(var(--arc-internal-size));
+    --arc-size-1-25: calc(var(--arc-internal-size)* 1.25);
+    --arc-size-1-5: calc(var(--arc-internal-size)* 1.5);
+    --arc-size-1-75: calc(var(--arc-internal-size)* 1.75);
+    --arc-size-2: calc(var(--arc-internal-size)* 2);
+    --arc-size-2-25: calc(var(--arc-internal-size)* 2.25);
+    --arc-size-2-5: calc(var(--arc-internal-size)* 2.5);
+    --arc-size-2-75: calc(var(--arc-internal-size)* 2.75);
+    --arc-size-3: calc(var(--arc-internal-size)* 3);
+    --arc-size-3-25: calc(var(--arc-internal-size)* 3.25);
+    --arc-size-3-5: calc(var(--arc-internal-size)* 3.5);
+    --arc-size-3-75: calc(var(--arc-internal-size)* 3.75);
+    --arc-size-4: calc(var(--arc-internal-size)* 4);
+    --arc-size-4-25: calc(var(--arc-internal-size)* 4.25);
+    --arc-size-4-5: calc(var(--arc-internal-size)* 4.5);
+    --arc-size-4-75: calc(var(--arc-internal-size)* 4.75);
+    --arc-size-5: calc(var(--arc-internal-size)* 5);
+    --arc-size-6: calc(var(--arc-internal-size)* 6);
+    --arc-size-7: calc(var(--arc-internal-size)* 7);
+    --arc-size-8: calc(var(--arc-internal-size)* 8);
+    --arc-size-9: calc(var(--arc-internal-size)* 9);
+    --arc-size-10: calc(var(--arc-internal-size)* 10);
+    --arc-size-11: calc(var(--arc-internal-size)* 11);
+    --arc-size-12: calc(var(--arc-internal-size)* 12);
+    --arc-size-13: calc(var(--arc-internal-size)* 13);
+    --arc-size-14: calc(var(--arc-internal-size)* 14);
+
+}
+::backdrop, :root {
+    --arc-color-blue-050: #f0fbff;
+    --arc-color-blue-100: #ddf4fd;
+    --arc-color-blue-200: #99e4ff;
+    --arc-color-blue-300: #53d1ff;
+    --arc-color-blue-400: #00aff0;
+    --arc-color-blue-500: #0098eb;
+    --arc-color-blue-600: #0075cf;
+    --arc-color-blue-700: #0065b2;
+    --arc-color-blue-800: #005394;
+    --arc-color-blue-900: #00335b;
+    --arc-color-purple-050: #f1f0ff;
+    --arc-color-purple-100: #e9e7fe;
+    --arc-color-purple-200: #b2a8ff;
+    --arc-color-purple-300: #9789fa;
+    --arc-color-purple-400: #8676ff;
+    --arc-color-purple-500: #7565f1;
+    --arc-color-purple-600: #4e3bd5;
+    --arc-color-purple-700: #3120b4;
+    --arc-color-purple-800: #16068e;
+    --arc-color-purple-900: #0c0064;
+    --arc-color-maroon-050: #ffeff3;
+    --arc-color-maroon-100: #fedde5;
+    --arc-color-maroon-200: #ffa8be;
+    --arc-color-maroon-300: #fe8fab;
+    --arc-color-maroon-400: #f27195;
+    --arc-color-maroon-500: #e05580;
+    --arc-color-maroon-600: #c73868;
+    --arc-color-maroon-700: #aa1a53;
+    --arc-color-maroon-800: #841a42;
+    --arc-color-maroon-900: #5d132d;
+    --arc-color-red-050: #fff0f0;
+    --arc-color-red-100: #fde2e2;
+    --arc-color-red-200: #f99;
+    --arc-color-red-300: #ff6161;
+    --arc-color-red-400: red;
+    --arc-color-red-500: #eb0000;
+    --arc-color-red-600: #b80000;
+    --arc-color-red-700: #900;
+    --arc-color-red-800: #7a0000;
+    --arc-color-red-900: #520000;
+    --arc-color-orange-050: #fff6f0;
+    --arc-color-orange-100: #fdeadd;
+    --arc-color-orange-200: #fac39e;
+    --arc-color-orange-300: #fd9e5e;
+    --arc-color-orange-400: #ff6602;
+    --arc-color-orange-500: #e95d00;
+    --arc-color-orange-600: #c24e00;
+    --arc-color-orange-700: #a84300;
+    --arc-color-orange-800: #933b00;
+    --arc-color-orange-900: #662900;
+
+}
+::backdrop, :root {
+    --arc-internal-space: 0.8rem* var(--arc-internal-font-size);
+    --arc-internal-size: 0.8rem* var(--arc-internal-font-size);
+    --arc-space-0: 0;
+    --arc-space-0-25: calc(var(--arc-internal-space)* 0.25);
+    --arc-space-0-5: calc(var(--arc-internal-space)* 0.5);
+    --arc-space-0-75: calc(var(--arc-internal-space)* 0.75);
+    --arc-space-1: calc(var(--arc-internal-space));
+    --arc-space-1-5: calc(var(--arc-internal-space)* 1.5);
+    --arc-space-2: calc(var(--arc-internal-space)* 2);
+    --arc-space-2-5: calc(var(--arc-internal-space)* 2.5);
+    --arc-space-3: calc(var(--arc-internal-space)* 3);
+    --arc-space-4: calc(var(--arc-internal-space)* 4);
+    --arc-space-5: calc(var(--arc-internal-space)* 5);
+    --arc-space-6: calc(var(--arc-internal-space)* 6);
+    --arc-space-7: calc(var(--arc-internal-space)* 7);
+    --arc-space-8: calc(var(--arc-internal-space)* 8);
+    --arc-space-9: calc(var(--arc-internal-space)* 9);
+    --arc-space-10: calc(var(--arc-internal-space)* 10);
+    --arc-space-11: calc(var(--arc-internal-space)* 11);
+    --arc-space-12: calc(var(--arc-internal-space)* 12);
+    --arc-size-0: 0;
+    --arc-size-0-25: calc(var(--arc-internal-size)* 0.25);
+    --arc-size-0-5: calc(var(--arc-internal-size)* 0.5);
+    --arc-size-0-75: calc(var(--arc-internal-size)* 0.75);
+    --arc-size-1: calc(var(--arc-internal-size));
+    --arc-size-1-25: calc(var(--arc-internal-size)* 1.25);
+    --arc-size-1-5: calc(var(--arc-internal-size)* 1.5);
+    --arc-size-1-75: calc(var(--arc-internal-size)* 1.75);
+    --arc-size-2: calc(var(--arc-internal-size)* 2);
+    --arc-size-2-25: calc(var(--arc-internal-size)* 2.25);
+    --arc-size-2-5: calc(var(--arc-internal-size)* 2.5);
+    --arc-size-2-75: calc(var(--arc-internal-size)* 2.75);
+    --arc-size-3: calc(var(--arc-internal-size)* 3);
+    --arc-size-3-25: calc(var(--arc-internal-size)* 3.25);
+    --arc-size-3-5: calc(var(--arc-internal-size)* 3.5);
+    --arc-size-3-75: calc(var(--arc-internal-size)* 3.75);
+    --arc-size-4: calc(var(--arc-internal-size)* 4);
+    --arc-size-4-25: calc(var(--arc-internal-size)* 4.25);
+    --arc-size-4-5: calc(var(--arc-internal-size)* 4.5);
+    --arc-size-4-75: calc(var(--arc-internal-size)* 4.75);
+    --arc-size-5: calc(var(--arc-internal-size)* 5);
+    --arc-size-6: calc(var(--arc-internal-size)* 6);
+    --arc-size-7: calc(var(--arc-internal-size)* 7);
+    --arc-size-8: calc(var(--arc-internal-size)* 8);
+    --arc-size-9: calc(var(--arc-internal-size)* 9);
+    --arc-size-10: calc(var(--arc-internal-size)* 10);
+    --arc-size-11: calc(var(--arc-internal-size)* 11);
+    --arc-size-12: calc(var(--arc-internal-size)* 12);
+    --arc-size-13: calc(var(--arc-internal-size)* 13);
+    --arc-size-14: calc(var(--arc-internal-size)* 14);
+
+}
+::backdrop, :root {
+    --arc-color-blue-050: #f0fbff;
+    --arc-color-blue-100: #ddf4fd;
+    --arc-color-blue-200: #99e4ff;
+    --arc-color-blue-300: #53d1ff;
+    --arc-color-blue-400: #00aff0;
+    --arc-color-blue-500: #0098eb;
+    --arc-color-blue-600: #0075cf;
+    --arc-color-blue-700: #0065b2;
+    --arc-color-blue-800: #005394;
+    --arc-color-blue-900: #00335b;
+    --arc-color-purple-050: #f1f0ff;
+    --arc-color-purple-100: #e9e7fe;
+    --arc-color-purple-200: #b2a8ff;
+    --arc-color-purple-300: #9789fa;
+    --arc-color-purple-400: #8676ff;
+    --arc-color-purple-500: #7565f1;
+    --arc-color-purple-600: #4e3bd5;
+    --arc-color-purple-700: #3120b4;
+    --arc-color-purple-800: #16068e;
+    --arc-color-purple-900: #0c0064;
+    --arc-color-maroon-050: #ffeff3;
+    --arc-color-maroon-100: #fedde5;
+    --arc-color-maroon-200: #ffa8be;
+    --arc-color-maroon-300: #fe8fab;
+    --arc-color-maroon-400: #f27195;
+    --arc-color-maroon-500: #e05580;
+    --arc-color-maroon-600: #c73868;
+    --arc-color-maroon-700: #aa1a53;
+    --arc-color-maroon-800: #841a42;
+    --arc-color-maroon-900: #5d132d;
+    --arc-color-red-050: #fff0f0;
+    --arc-color-red-100: #fde2e2;
+    --arc-color-red-200: #f99;
+    --arc-color-red-300: #ff6161;
+    --arc-color-red-400: red;
+    --arc-color-red-500: #eb0000;
+    --arc-color-red-600: #b80000;
+    --arc-color-red-700: #900;
+    --arc-color-red-800: #7a0000;
+    --arc-color-red-900: #520000;
+    --arc-color-orange-050: #fff6f0;
+    --arc-color-orange-100: #fdeadd;
+    --arc-color-orange-200: #fac39e;
+    --arc-color-orange-300: #fd9e5e;
+    --arc-color-orange-400: #ff6602;
+    --arc-color-orange-500: #e95d00;
+    --arc-color-orange-600: #c24e00;
+    --arc-color-orange-700: #a84300;
+    --arc-color-orange-800: #933b00;
+    --arc-color-orange-900: #662900;
+    --arc-color-yellow-050: #fffaf0;
+    --arc-color-yellow-100: #fdf2dd;
+    --arc-color-yellow-200: #ffdb94;
+    --arc-color-yellow-300: #ffc960;
+    --arc-color-yellow-400: #ffb629;
+    --arc-color-yellow-500: #eb9b00;
+    --arc-color-yellow-600: #9e6900;
+    --arc-color-yellow-700: #805400;
+    --arc-color-yellow-800: #604000;
+    --arc-color-yellow-900: #3e2900;
+    --arc-color-green-050: #f6fff0;
+    --arc-color-green-100: #e7fdd9;
+    --arc-color-green-200: #bfeea0;
+    --arc-color-green-300: #8dd65c;
+    --arc-color-green-400: #74bb44;
+    --arc-color-green-500: #57a225;
+    --arc-color-green-600: #358201;
+    --arc-color-green-700: #2c6d00;
+    --arc-color-green-800: #235800;
+    --arc-color-green-900: #1b4300;
+    --arc-color-mint-050: #f0fff9;
+    --arc-color-mint-100: #d9fdef;
+    --arc-color-mint-200: #9df1d1;
+    --arc-color-mint-300: #6de3b6;
+    --arc-color-mint-400: #44bf90;
+    --arc-color-mint-500: #0f9f68;
+    --arc-color-mint-600: #008451;
+    --arc-color-mint-700: #006e44;
+    --arc-color-mint-800: #005937;
+    --arc-color-mint-900: #00442a;
+    --arc-color-neutral-050: #f7f7f7;
+    --arc-color-neutral-100: #ededed;
+    --arc-color-neutral-200: #e6e6e6;
+    --arc-color-neutral-300: #c6c6c6;
+    --arc-color-neutral-400: #b0b0b0;
+    --arc-color-neutral-500: #9b9b9b;
+    --arc-color-neutral-600: #737373;
+    --arc-color-neutral-700: #636363;
+    --arc-color-neutral-800: #4b4b4b;
+    --arc-color-neutral-900: #212121;
+    --arc-color-mono-black: #000;
+    --arc-color-mono-white: #fff;
+    --arc-color-ai-purple-050: #faf3ff;
+    --arc-color-ai-purple-100: #efccff;
+    --arc-color-ai-purple-200: #9c15ff;
+    --arc-color-ai-purple-300: #680278;
+    --arc-color-ai-purple-400: #5d3668;
+    --arc-color-ai-purple-500: #37003f;
+    --arc-color-ai-purple-600: #27002c;
+    --arc-color-ai-blue-050: #f4fbff;
+    --arc-color-ai-blue-100: #d2f1fe;
+    --arc-color-ai-blue-200: #1eb4fb;
+    --arc-color-ai-blue-300: #0286e6;
+    --arc-color-ai-blue-400: #36648c;
+    --arc-color-ai-blue-500: #004273;
+    --arc-color-ai-blue-600: #012a48;
+    --arc-color-brand-light: var(--arc-color-blue-050);
+    --arc-color-brand-medium: var(--arc-color-blue-200);
+    --arc-color-brand-root: var(--arc-color-blue-400);
+    --arc-color-brand-dark: var(--arc-color-blue-600);
+    --arc-color-brand-heavy: var(--arc-color-blue-800);
+    --arc-color-info-light: var(--arc-color-purple-050);
+    --arc-color-info-medium: var(--arc-color-purple-200);
+    --arc-color-info-root: var(--arc-color-purple-500);
+    --arc-color-info-dark: var(--arc-color-purple-600);
+    --arc-color-info-heavy: var(--arc-color-purple-700);
+    --arc-color-success-light: var(--arc-color-green-050);
+    --arc-color-success-medium: var(--arc-color-green-200);
+    --arc-color-success-root: var(--arc-color-green-400);
+    --arc-color-success-dark: var(--arc-color-green-600);
+    --arc-color-success-heavy: var(--arc-color-green-700);
+    --arc-color-warning-light: var(--arc-color-yellow-050);
+    --arc-color-warning-medium: var(--arc-color-yellow-200);
+    --arc-color-warning-root: var(--arc-color-yellow-400);
+    --arc-color-warning-dark: var(--arc-color-yellow-500);
+    --arc-color-warning-heavy: var(--arc-color-yellow-700);
+    --arc-color-critical-light: var(--arc-color-red-050);
+    --arc-color-critical-medium: var(--arc-color-red-200);
+    --arc-color-critical-root: var(--arc-color-red-500);
+    --arc-color-critical-dark: var(--arc-color-red-600);
+    --arc-color-critical-heavy: var(--arc-color-red-700);
+    --arc-color-alpha-white-0: #fff0;
+    --arc-color-alpha-white-03: #ffffff08;
+    --arc-color-alpha-white-05: #ffffff0d;
+    --arc-color-alpha-white-10: #ffffff1a;
+    --arc-color-alpha-white-20: #fff3;
+    --arc-color-alpha-white-30: #ffffff4d;
+    --arc-color-alpha-white-40: #fff6;
+    --arc-color-alpha-white-50: #ffffff80;
+    --arc-color-alpha-white-60: #fff9;
+    --arc-color-alpha-white-70: #ffffffb3;
+    --arc-color-alpha-white-80: #fffc;
+    --arc-color-alpha-white-90: #ffffffe6;
+    --arc-color-alpha-white-95: #fffffff2;
+    --arc-color-alpha-white-100: #fff;
+    --arc-color-alpha-black-0: #0000;
+    --arc-color-alpha-black-03: #00000008;
+    --arc-color-alpha-black-05: #0000000d;
+    --arc-color-alpha-black-10: #0000001a;
+    --arc-color-alpha-black-20: #0003;
+    --arc-color-alpha-black-30: #0000004d;
+    --arc-color-alpha-black-40: #0006;
+    --arc-color-alpha-black-50: #00000080;
+    --arc-color-alpha-black-60: #0009;
+    --arc-color-alpha-black-70: #000000b3;
+    --arc-color-alpha-black-80: #000c;
+    --arc-color-alpha-black-90: #000000e6;
+    --arc-color-alpha-black-95: #000000f2;
+    --arc-color-alpha-black-100: #000;
+    --arc-color-border-standard: var(--arc-color-alpha-black-10);
+    --arc-color-border-stark: var(--arc-color-alpha-black-30);
+    --arc-color-border-full: var(--arc-color-alpha-black-100);
+    --arc-color-border-selected: var(--arc-color-blue-400);
+    --arc-color-border-focus: var(--arc-color-blue-600);
+    --arc-color-border-focus-inverse: var(--arc-color-blue-300);
+    --arc-color-border-brand: var(--arc-color-brand-root);
+    --arc-color-border-info: var(--arc-color-info-root);
+    --arc-color-border-success: var(--arc-color-success-root);
+    --arc-color-border-warning: var(--arc-color-warning-root);
+    --arc-color-border-critical: var(--arc-color-critical-root);
+    --arc-color-text-primary: var(--arc-color-mono-black);
+    --arc-color-text-primary-hover: var(--arc-color-neutral-700);
+    --arc-color-text-secondary: var(--arc-color-neutral-700);
+    --arc-color-text-secondary-hover: var(--arc-color-neutral-900);
+    --arc-color-text-disabled: var(--arc-color-alpha-black-30);
+    --arc-color-text-brand: var(--arc-color-brand-dark);
+    --arc-color-text-info: var(--arc-color-info-dark);
+    --arc-color-text-success: var(--arc-color-success-dark);
+    --arc-color-text-warning: var(--arc-color-warning-heavy);
+    --arc-color-text-critical: var(--arc-color-critical-root);
+    --arc-color-text-inverse: var(--arc-color-mono-white);
+    --arc-color-text-inverse-hover: var(--arc-color-alpha-white-70);
+    --arc-color-text-inverse-disabled: var(--arc-color-alpha-white-50);
+    --arc-color-icon-primary: var(--arc-color-mono-black);
+    --arc-color-icon-primary-hover: var(--arc-color-neutral-700);
+    --arc-color-icon-secondary: var(--arc-color-neutral-700);
+    --arc-color-icon-secondary-hover: var(--arc-color-neutral-900);
+    --arc-color-icon-disabled: var(--arc-color-alpha-black-30);
+    --arc-color-icon-brand: var(--arc-color-brand-root);
+    --arc-color-icon-info: var(--arc-color-info-root);
+    --arc-color-icon-success: var(--arc-color-success-root);
+    --arc-color-icon-warning: var(--arc-color-warning-root);
+    --arc-color-icon-critical: var(--arc-color-critical-root);
+    --arc-color-icon-inverse: var(--arc-color-mono-white);
+    --arc-color-icon-inverse-hover: var(--arc-color-alpha-white-70);
+    --arc-color-icon-inverse-disabled: var(--arc-color-alpha-white-50);
+    --arc-color-background-primary: var(--arc-color-mono-white);
+    --arc-color-background-primary-hover: var(--arc-color-neutral-100);
+    --arc-color-background-primary-selected: var(--arc-color-blue-100);
+    --arc-color-background-primary-selected-stark: var(--arc-color-blue-200);
+    --arc-color-background-secondary: var(--arc-color-neutral-050);
+    --arc-color-background-secondary-hover: var(--arc-color-neutral-100);
+    --arc-color-background-tertiary: var(--arc-color-neutral-200);
+    --arc-color-background-inverse: var(--arc-color-mono-black);
+    --arc-color-overlay-dark: var(--arc-color-alpha-black-50);
+    --arc-color-overlay-light: var(--arc-color-alpha-white-70);
+    --arc-gradient-ai-050: linear-gradient(to right top, var(--arc-color-ai-purple-050), var(--arc-color-ai-blue-050));
+    --arc-gradient-ai-100: linear-gradient(to right top, var(--arc-color-ai-purple-100), var(--arc-color-ai-blue-100));
+    --arc-gradient-ai-200: linear-gradient(to right top, var(--arc-color-ai-purple-200), var(--arc-color-ai-blue-200));
+    --arc-gradient-ai-300: linear-gradient(to right top, var(--arc-color-ai-purple-300), var(--arc-color-ai-blue-300));
+    --arc-gradient-ai-400: linear-gradient(to right top, var(--arc-color-ai-purple-400), var(--arc-color-ai-blue-400));
+    --arc-gradient-ai-500: linear-gradient(to right top, var(--arc-color-ai-purple-500), var(--arc-color-ai-blue-500));
+    --arc-gradient-ai-600: linear-gradient(to right top, var(--arc-color-ai-purple-600), var(--arc-color-ai-blue-600));
+    --arc-internal-font-size: var(--arc-font-size-base, 0.625);
+    --arc-internal-font-body: Inter, system-ui, sans-serif;
+    --arc-internal-font-expressive: "GT Walsheim", system-ui, sans-serif;
+    --arc-internal-font-mono: "Roboto Mono", monospace;
+    --arc-internal-font-size-mono: 0.875em;
+    --arc-internal-letter-spacing: -0.015em;
+    --arc-internal-font-vs: "opsz" 24;
+    --arc-font-family-title: var(--arc-internal-font-expressive);
+    --arc-font-family-heading: var(--arc-internal-font-expressive);
+    --arc-font-family-subheading: var(--arc-internal-font-body);
+    --arc-font-family-expressive: var(--arc-internal-font-expressive);
+    --arc-font-family-body: var(--arc-internal-font-body);
+    --arc-font-family-mono: var(--arc-internal-font-mono);
+    --arc-font-size-08: calc(0.8rem* var(--arc-internal-font-size));
+    --arc-font-size-10: calc(1rem* var(--arc-internal-font-size));
+    --arc-font-size-12: calc(1.2rem* var(--arc-internal-font-size));
+    --arc-font-size-14: calc(1.4rem* var(--arc-internal-font-size));
+    --arc-font-size-16: calc(1.6rem* var(--arc-internal-font-size));
+    --arc-font-size-18: calc(1.8rem* var(--arc-internal-font-size));
+    --arc-font-size-20: calc(2rem* var(--arc-internal-font-size));
+    --arc-font-size-24: calc(2.4rem* var(--arc-internal-font-size));
+    --arc-font-size-28: calc(2.8rem* var(--arc-internal-font-size));
+    --arc-font-size-32: calc(3.2rem* var(--arc-internal-font-size));
+    --arc-font-size-40: calc(4rem* var(--arc-internal-font-size));
+    --arc-font-size-title-lg: var(--arc-font-size-40);
+    --arc-font-size-title-md: var(--arc-font-size-32);
+    --arc-font-size-title-sm: var(--arc-font-size-28);
+    --arc-font-size-heading-lg: var(--arc-font-size-24);
+    --arc-font-size-heading-md: var(--arc-font-size-20);
+    --arc-font-size-heading-sm: var(--arc-font-size-18);
+    --arc-font-size-subheading-lg: var(--arc-font-size-16);
+    --arc-font-size-subheading-md: var(--arc-font-size-14);
+    --arc-font-size-subheading-sm: var(--arc-font-size-12);
+    --arc-font-size-body-lg: var(--arc-font-size-16);
+    --arc-font-size-body-md: var(--arc-font-size-14);
+    --arc-font-size-body-sm: var(--arc-font-size-12);
+    --arc-font-size-body-xs: var(--arc-font-size-10);
+    --arc-font-size-mono-lg: var(--arc-font-size-14);
+    --arc-font-size-mono-md: var(--arc-font-size-12);
+    --arc-font-size-mono-sm: var(--arc-font-size-10);
+    --arc-font-weight-400: 400;
+    --arc-font-weight-500: 500;
+    --arc-font-weight-600: 600;
+    --arc-font-weight-title: var(--arc-font-weight-600);
+    --arc-font-weight-heading: var(--arc-font-weight-600);
+    --arc-font-weight-subheading: var(--arc-font-weight-600);
+    --arc-font-weight-bold: var(--arc-font-weight-600);
+    --arc-font-weight-body: var(--arc-font-weight-400);
+    --arc-font-weight-normal: var(--arc-font-weight-400);
+    --arc-line-height-loose: 1.6;
+    --arc-line-height-standard: 1.4;
+    --arc-line-height-tight: 1.2;
+    --arc-line-height-title: var(--arc-line-height-tight);
+    --arc-line-height-heading: var(--arc-line-height-tight);
+    --arc-line-height-subheading: var(--arc-line-height-tight);
+    --arc-line-height-body: var(--arc-line-height-standard);
+    --arc-line-height-mono: var(--arc-line-height-standard);
+    --arc-letter-spacing-heading: var(--arc-internal-letter-spacing);
+    --arc-letter-spacing-title: var(--arc-internal-letter-spacing);
+}

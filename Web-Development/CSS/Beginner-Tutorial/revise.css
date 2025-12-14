@@ -1,0 +1,61 @@
+*{
+    background-color: wheat;
+    text-align:center;
+    color: #a52a2a;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+p{
+   
+    color:red;
+    line-height: 30px;
+}
+h3{
+    color: black;
+}
+a{
+    color:rgb(0,255,0);
+    text-decoration: none;
+}
+button{
+    background-color: white;
+    color: blueviolet;
+}
+textarea{
+    color: #000000;
+}
+
+span{
+    text-decoration:underline ;
+}
+
+/* h1{
+    color: orange;
+    background-color:rgb(255, 255,0);
+    text-align: center;
+    border: solid;
+    width: 50%;
+    text-decoration: underline;
+}
+button{
+    background-color: blue;
+    color:white;
+    text-decoration: line-through;
+
+}
+p{
+    background-color: black;
+    color:white;
+    text-decoration: blue wavy overline ;
+}
+#logo{
+    background-color:white;
+    color:#ffa511;
+    font-family: League spartan;
+    text-align: center;
+    font-size: 55px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    text-decoration: teal double underline;
+    text-transform: uppercase;
+} */
