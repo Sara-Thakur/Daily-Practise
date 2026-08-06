@@ -1,0 +1,11 @@
+.chatbox{
+    align-items: end;
+    margin:2cm;
+    padding:1px;
+    height: 500px;
+    background-color:pink;
+    width:900px;
+    border-radius: 2px;
+    border-color: black;
+    border-style: solid;
+}
