@@ -34,7 +34,7 @@ client.create_collection(
     vectors_config=VectorParams(
         size=EMBEDDING_SIZE,
         distance=Distance.COSINE,#algorithm for similarity
-    )
+    ),
 )
 print(f"Collection {COLLECTION_NAME} created successfully!")
 print(f"Vector size: {EMBEDDING_SIZE}")
@@ -53,7 +53,7 @@ print(f"Loaded{len(documents)}documents")
 
 #creating embedding
 print("loading embedding model")
-model=SentenceTransformer("all-MiniLM-L6-v2")
+model=SentenceTransformer("all-MiniLM-L6-v2")#produce 384 size vector
 print("embedding model ready!")
 embeddings=model.encode(documents)
 
@@ -78,9 +78,9 @@ client.upsert(  #upload+insert
     collection_name=COLLECTION_NAME,
     points=points
 )
+print(f"Uploaded {len(points)} document to Qdrant")
 
 #search qdrant
-
 def search(query,top_k=3):#topk degines how muvh results for thr queru uou want
     query_vector=model.encode(query).tolist()
     results=client.query_points(
@@ -93,7 +93,7 @@ def search(query,top_k=3):#topk degines how muvh results for thr queru uou want
 
 query="How many vacations days do i get?"
 results=search(query,top_k=3)
-print("\nSearch Results")
+print("\nSearch Results:")
 
 for result in results:
     print(f"Score:{result.score:.3f}")
@@ -108,7 +108,8 @@ groq_client = Groq(api_key=GROQ_API_KEY)
 # role="system"
 
 def ask_llm(question,context):
-    prompt = f"""Answer the question '{question}' only using the information provided in the context below. Do not hallucinate.
+    prompt = f"""
+    Answer the question '{question}' only using the information provided in the context below. Do not hallucinate.
     If the answer is not present in the context, say: "I don't know based on the provided info."
     
     Context:
@@ -126,6 +127,7 @@ def ask_llm(question,context):
 # complete rag pipeline
 # client=Groq(api_key=my_api_key)
 
+# complete rag pipeline
 question="How many vacations do i get"
 results=search(question,top_k=3)
 
@@ -136,6 +138,6 @@ context="\n".join(
 )
 
 answer=ask_llm(question,context)
-print("\nAnswer")
+print("\nFinal Answer")
 print(answer)
 # role="user"
