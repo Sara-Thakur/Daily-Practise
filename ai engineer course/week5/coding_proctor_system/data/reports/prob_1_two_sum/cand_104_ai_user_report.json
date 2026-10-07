@@ -1,0 +1,48 @@
+{
+  "candidate_id": "cand_104_ai_user",
+  "problem_id": "prob_1_two_sum",
+  "overall_risk": 0.2374,
+  "is_flagged": false,
+  "recommendation": "CLEAR",
+  "code_similarity_score": 0.0,
+  "most_similar_candidate": "cand_101_honest",
+  "same_bug_score": 0.0,
+  "collusion_partner": "None",
+  "ai_probability": 0.86,
+  "reasons": [
+    "Groq LLM Judge detected high AI characteristics (Probability: 86.0%, Confidence: 92.0%)",
+    "AI Observation: The solution follows the textbook hash\u2011map pattern for Two Sum without any deviation or optimization.",
+    "AI Observation: Uses full type hints (List[int], Dict[int, int]) and a multi\u2011line Sphinx\u2011style docstring, which are common in LLM\u2011generated snippets."
+  ],
+  "hidden_tests_summary": [
+    {
+      "test_id": "tc1_3",
+      "passed": true,
+      "error_type": "PASSED",
+      "error_message": null
+    },
+    {
+      "test_id": "tc1_4_hidden_edge",
+      "passed": true,
+      "error_type": "PASSED",
+      "error_message": null
+    }
+  ],
+  "ai_detection_details": {
+    "confidence": 0.92,
+    "reasons": [
+      "The solution follows the textbook hash\u2011map pattern for Two Sum without any deviation or optimization.",
+      "Uses full type hints (List[int], Dict[int, int]) and a multi\u2011line Sphinx\u2011style docstring, which are common in LLM\u2011generated snippets.",
+      "Variable names are generic (num_to_index, complement) and match the naming in the provided baselines.",
+      "No personal comments, debugging prints, or idiosyncratic formatting quirks that a human might leave.",
+      "The control flow (enumerate loop, complement check, immediate return, final empty list) is virtually identical to the baseline implementations."
+    ],
+    "baseline_matches": [
+      "Dictionary mapping of numbers to their indices (index_map / num_to_index).",
+      "Loop using `for index, number in enumerate(nums):` with complement calculation `target - number`.",
+      "Immediate return of `[previous_index, current_index]` when complement is found.",
+      "Fallback return of an empty list when no pair exists (matching Baseline #2).",
+      "Overall structural layout: docstring, initialization of map, loop, complement check, update map, final return."
+    ]
+  }
+}

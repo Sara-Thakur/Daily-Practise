@@ -1,0 +1,113 @@
+ python multiagnt.py
+==========================================================
+               AGENT SYSTEM BENCHMARK BENCH               
+==========================================================
+TEST QUERY:
+Find the current estimated population of Tokyo and Paris. Calculate what percentage Tokyo's population is of Paris's population. Then, compute the square root of the absolute difference between their two populations.
+
+
+--------------------------------------------------
+         RUNNING SINGLE-AGENT SYSTEM             
+--------------------------------------------------
+
+[Single-Agent Iteration 1/5] Calling Groq LLM...
+--> API Call Time: 1.79s
+Thought: First, I need the most recent estimate of Tokyo's population. I'll search for that.
+Action : web_search
+Input  : current estimated population of Tokyo
+Observation: [1] Tokyo Population 2026: Tokyo's 2026 population is now estimated at 10,316,210.In 1995, the population of Tokyo was 7,967,614.Tokyo has grown by 99,525 in the last year, which represents a 0.97% an...
+
+[Single-Agent Iteration 2/5] Calling Groq LLM...
+--> API Call Time: 0.93s
+Thought: I have Tokyo population data but need a reliable current estimate for Paris as well before performing calculations.
+Action : web_search
+Input  : current estimated population of Paris
+Observation: [1] Paris Population 2026: # Paris
+
+Paris's 2026 population is now estimated at 2,059,821.In 2006, the population of Paris was 2,181,371.Paris experienced a decrease of -14,549 residents over the past...
+
+[Single-Agent Iteration 3/5] Calling Groq LLM...
+API Error on attempt 3 (1.47s): Error code: 400 - {'error': {'message': 'Tool choice is none, but model called a tool', 'type': 'invalid_request_error', 'code': 'tool_use_failed', 'failed_generation': '{"name": "calculator", "arguments": (10316210 / 2059821) * 100}'}}
+
+[Single-Agent Iteration 4/5] Calling Groq LLM...
+API Error on attempt 4 (1.72s): Error code: 400 - {'error': {'message': 'Tool choice is none, but model called a tool', 'type': 'invalid_request_error', 'code': 'tool_use_failed', 'failed_generation': '{"name": "calculator", "arguments": (10316210 / 2059821) * 100}'}}
+
+[Single-Agent Iteration 5/5] Calling Groq LLM...
+--> API Call Time: 12.90s
+Thought: Now that I have the latest population estimates for Tokyo (10,316,210) and Paris (2,059,821), I will calculate the percentage of Tokyo's population relative to Paris's and the square root of the absolute difference between the two populations.
+Action : calculator
+Input  : tokyo=10316210; paris=2059821; perc=tokyo/paris*100; diff=abs(tokyo-paris); sqrt_diff=diff**0.5; (perc, sqrt_diff)
+Observation: Calculator Execution Error: invalid syntax (<string>, line 1)...
+
+================ Single-Agent System Performance Summary ================
+Total System Runtime  : 22.37 seconds
+Total API Calls       : 3
+Total API Latency     : 15.62 seconds
+Avg Time per API Call : 5.21 seconds
+Prompt (Input) Tokens : 4246
+Completion Tokens     : 934
+Total Tokens Used     : 5180
+=====================================================================
+
+
+--------------------------------------------------
+          RUNNING MULTI-AGENT SYSTEM             
+--------------------------------------------------
+
+[Multi-Agent Step 1/5] Director LLM Evaluating...
+--> Director API Latency: 3.94s
+Director Thought   : Need up-to-date population figures for Tokyo and Paris before performing calculations
+Delegating To      : WebSearch_Agent
+Task Directive     : Retrieve the most recent estimated population numbers for Tokyo, Japan and Paris, France (city proper, not metro area). Provide the values as of the latest available data (e.g., 2023 or 2024).
+>>> Invoking WebSearch Agent...
+--> WebSearch Agent Query Gen API Latency: 3.83s
+--> WebSearch Agent Synthesis API Latency: 9.74s
+WebSearch Result Saved to Notes: **Tokyo, Japan (city proper)**  
+- Estimated population: **≈ 14 million** residents.  
+- Latest figure cited for the city‑proper population is **“over...
+
+[Multi-Agent Step 2/5] Director LLM Evaluating...
+--> Director API Latency: 7.50s
+Director Thought   : We have population estimates from the notes. Need to calculate percentage and square root of difference, which requires arithmetic. Delegate to Calculator_Agent.
+Delegating To      : Calculator_Agent
+Task Directive     : Using Tokyo population = 14,000,000 and Paris population = 2,160,000, compute (1) the percentage of Tokyo's population relative to Paris's population, i.e., (Tokyo/Paris)*100, and (2) the square root of the absolute difference between the two populations, i.e., sqrt(|Tokyo - Paris|). Return both results with appropriate precision.
+>>> Invoking Calculator Agent...
+--> Calculator Agent Expr API Latency: 4.96s
+--> Calculator Agent Formatting API Latency: 7.35s
+Calculator Result Saved to Notes: **Computation Summary**
+
+1. **Tokyo’s population as a percentage of Paris’s population**  
+   \[
+   \frac{14{,}000{,}000}{2{,}160{,}000} \times 100 \a...
+
+[Multi-Agent Step 3/5] Director LLM Evaluating...
+--> Director API Latency: 4.70s
+Director Thought   : We have the latest city‑proper population estimates for Tokyo (~14 million) and Paris (~2.16 million) from the WebSearch output, and the Calculator has already computed the required percentage (≈648.15 %) and the square‑root of the absolute difference (≈3,440.93). No further data gathering or computation is needed, so we can deliver the final answer.
+Delegating To      : FINAL_ANSWER
+Task Directive     : 
+
+================ Multi-Agent System Performance Summary ================
+Total System Runtime  : 43.69 seconds
+Total API Calls       : 7
+Total API Latency     : 42.03 seconds
+Avg Time per API Call : 6.00 seconds
+Prompt (Input) Tokens : 3438
+Completion Tokens     : 2544
+Total Tokens Used     : 5982
+=====================================================================
+
+
+==========================================================
+                    FINAL ANSWERS                         
+==========================================================
+
+[Single-Agent Output]:
+Reached maximum attempts (5) without producing a final answer.
+
+
+[Multi-Agent Output]:
+- **Tokyo (city proper)**: about 14 million residents (2023 estimate).  
+- **Paris (city proper – the commune)**: about 2.16 million residents (2023 estimate).  
+- **Tokyo’s population as a percentage of Paris’s**: (14,000,000 ÷ 2,160,000) × 100 ≈ **648.15 %**.  
+- **Square root of the absolute population difference**: √|14,000,000 − 2,160,000| ≈ **3,440.93**.  
+Thus, Tokyo’s population is roughly 6.5 times (≈648 %) that of Paris, and the square root of the difference between the two city‑proper populations is about 3,441.

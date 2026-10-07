@@ -1,0 +1,47 @@
+{
+  "candidate_id": "cand_101_honest",
+  "problem_id": "prob_2_valid_parentheses",
+  "overall_risk": 0.1151,
+  "is_flagged": false,
+  "recommendation": "CLEAR",
+  "code_similarity_score": 0.1429,
+  "most_similar_candidate": "cand_104_ai_user",
+  "same_bug_score": 0.0,
+  "collusion_partner": "None",
+  "ai_probability": 0.35,
+  "reasons": [
+    "Clean submission with low structural similarity and normal test behavior."
+  ],
+  "hidden_tests_summary": [
+    {
+      "test_id": "tc2_3_hidden",
+      "passed": true,
+      "error_type": "PASSED",
+      "error_message": null
+    },
+    {
+      "test_id": "tc2_4_hidden_edge",
+      "passed": true,
+      "error_type": "PASSED",
+      "error_message": null
+    }
+  ],
+  "ai_detection_details": {
+    "confidence": 0.62,
+    "reasons": [
+      "The submission lacks any docstring, type hints, or explanatory comments, which are common in LLM-generated boilerplate solutions.",
+      "Variable names are very short (st, mapping) and not overly descriptive, suggesting a personal coding style rather than the more verbose naming often seen in AI outputs.",
+      "The use of a sentinel value ('#') in the pop expression is a small, clever trick that is less typical of generic LLM templates.",
+      "Formatting is minimal and consistent with a human's quick implementation (no extra blank lines, no trailing spaces).",
+      "While the overall algorithm (stack with mapping dict) matches the canonical solution, the specific control flow (pop\u2011if\u2011else with sentinel) differs from the baseline patterns."
+    ],
+    "baseline_matches": [
+      "Defines a dictionary mapping closing brackets to opening brackets (mapping / pairs).",
+      "Initializes an empty list to act as a stack (st / stack).",
+      "Iterates over each character in the input string.",
+      "Checks if the character is a closing bracket by testing membership in the mapping dictionary.",
+      "Pushes opening brackets onto the stack and pops/compares for closing brackets.",
+      "Returns True/False based on whether the stack is empty at the end (return not st)."
+    ]
+  }
+}

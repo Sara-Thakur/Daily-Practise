@@ -1,0 +1,49 @@
+{
+  "candidate_id": "cand_101_honest",
+  "problem_id": "prob_3_longest_substring",
+  "overall_risk": 0.2792,
+  "is_flagged": false,
+  "recommendation": "CLEAR",
+  "code_similarity_score": 0.3962,
+  "most_similar_candidate": "AI_Baseline_3",
+  "same_bug_score": 0.0,
+  "collusion_partner": "None",
+  "ai_probability": 0.66,
+  "reasons": [
+    "Groq LLM Judge detected high AI characteristics (Probability: 66.0%, Confidence: 71.0%)",
+    "AI Observation: The solution follows the textbook sliding\u2011window pattern that is the most common answer for this problem.",
+    "AI Observation: Variable names (char_map, left, right, max_len) are generic and match the naming style used in many LLM examples."
+  ],
+  "hidden_tests_summary": [
+    {
+      "test_id": "tc3_3_hidden",
+      "passed": true,
+      "error_type": "PASSED",
+      "error_message": null
+    },
+    {
+      "test_id": "tc3_4_hidden_edge",
+      "passed": true,
+      "error_type": "PASSED",
+      "error_message": null
+    }
+  ],
+  "ai_detection_details": {
+    "confidence": 0.71,
+    "reasons": [
+      "The solution follows the textbook sliding\u2011window pattern that is the most common answer for this problem.",
+      "Variable names (char_map, left, right, max_len) are generic and match the naming style used in many LLM examples.",
+      "No docstring, type hints, or explanatory comments are present, which is typical of a minimal human snippet but also matches the terse style some LLMs produce when asked for just the core function.",
+      "The control flow (enumerate loop, check \"if char in char_map and char_map[char] >= left\", update left, update dict, compute max_len with max()) is virtually identical to the three provided AI baselines, differing only in variable names.",
+      "The code is compact, uses a single pass, and does not contain any idiosyncratic formatting quirks or personal comments that would suggest a human author."
+    ],
+    "baseline_matches": [
+      "Use of a dictionary to store the last seen index of each character (char_map vs last_index/last_seen).",
+      "Sliding window maintained by a left/start pointer that is moved to last occurrence + 1 when a repeat is found.",
+      "Condition \"if char in dict and dict[char] >= left\" mirrors the baselines' \"if ch in last_index and last_index[ch] >= start\".",
+      "Updating the dictionary with the current index each iteration.",
+      "Computing the current window length as right - left + 1 and updating max_len with max().",
+      "Overall one\u2011pass O(n) algorithm with O(min(m, n)) space."
+    ]
+  }
+}

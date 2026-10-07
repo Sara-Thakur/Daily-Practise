@@ -1,0 +1,41 @@
+{
+  "candidate_id": "cand_103_cheater_B",
+  "problem_id": "prob_1_two_sum",
+  "overall_risk": 0.3906,
+  "is_flagged": false,
+  "recommendation": "CLEAR",
+  "code_similarity_score": 0.0256,
+  "most_similar_candidate": "cand_101_honest",
+  "same_bug_score": 1.0,
+  "collusion_partner": "cand_102_cheater_A",
+  "ai_probability": 0.12,
+  "reasons": [
+    "Identical hidden-test failure pattern (100.0%) with 'cand_102_cheater_A' on tests [tc1_4_hidden_edge:IndexError]"
+  ],
+  "hidden_tests_summary": [
+    {
+      "test_id": "tc1_3",
+      "passed": true,
+      "error_type": "PASSED",
+      "error_message": null
+    },
+    {
+      "test_id": "tc1_4_hidden_edge",
+      "passed": false,
+      "error_type": "IndexError",
+      "error_message": "IndexError: list index out of range"
+    }
+  ],
+  "ai_detection_details": {
+    "confidence": 0.88,
+    "reasons": [
+      "The code uses a naive O(n^2) double\u2011loop approach, whereas the AI baselines all employ a hash\u2011map (dictionary) solution, indicating a different structural pattern.",
+      "There is an injected dead variable (\"dead_code_debug = 100\") and an explicit comment about copying a bug, which is atypical of LLM\u2011generated code that usually omits such purposeful errors.",
+      "No docstring, type hints, or detailed comments are present; LLMs often include at least a minimal docstring or inline explanation.",
+      "Variable names (\"arr\", \"val\", \"idx_a\", \"idx_b\") are short and informal, lacking the more descriptive naming (\"nums\", \"target\", \"index_map\") seen in the baselines.",
+      "The inner loop range uses \"size + 1\", a clear off\u2011by\u2011one bug that LLMs rarely introduce intentionally; this suggests a human debugging artifact.",
+      "Formatting is minimal and does not follow the typical LLM style of consistent spacing and line breaks around operators."
+    ],
+    "baseline_matches": []
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "problem_id": "prob_1_two_sum",
+  "title": "Two Sum",
+  "description": "Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`.",
+  "entrypoint": "two_sum",
+  "test_cases": [
+    {
+      "test_id": "tc1_1",
+      "input_data": [
+        [
+          2,
+          7,
+          11,
+          15
+        ],
+        9
+      ],
+      "expected_output": [
+        0,
+        1
+      ],
+      "is_hidden": false
+    },
+    {
+      "test_id": "tc1_2",
+      "input_data": [
+        [
+          3,
+          2,
+          4
+        ],
+        6
+      ],
+      "expected_output": [
+        1,
+        2
+      ],
+      "is_hidden": false
+    },
+    {
+      "test_id": "tc1_3",
+      "input_data": [
+        [
+          3,
+          3
+        ],
+        6
+      ],
+      "expected_output": [
+        0,
+        1
+      ],
+      "is_hidden": true
+    },
+    {
+      "test_id": "tc1_4_hidden_edge",
+      "input_data": [
+        [
+          -1,
+          -2,
+          -3,
+          -4,
+          -5
+        ],
+        -8
+      ],
+      "expected_output": [
+        2,
+        4
+      ],
+      "is_hidden": true
+    }
+  ]
+}

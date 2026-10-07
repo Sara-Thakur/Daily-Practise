@@ -1,0 +1,39 @@
+{
+  "candidate_id": "cand_102_cheater_A",
+  "problem_id": "prob_4_rotated_search",
+  "overall_risk": 0.1193,
+  "is_flagged": false,
+  "recommendation": "CLEAR",
+  "code_similarity_score": 0.2353,
+  "most_similar_candidate": "cand_103_cheater_B",
+  "same_bug_score": 0.0,
+  "collusion_partner": "None",
+  "ai_probability": 0.15,
+  "reasons": [
+    "Clean submission with low structural similarity and normal test behavior."
+  ],
+  "hidden_tests_summary": [
+    {
+      "test_id": "tc4_3_hidden",
+      "passed": true,
+      "error_type": "PASSED",
+      "error_message": null
+    },
+    {
+      "test_id": "tc4_4_hidden_edge",
+      "passed": true,
+      "error_type": "PASSED",
+      "error_message": null
+    }
+  ],
+  "ai_detection_details": {
+    "confidence": 0.82,
+    "reasons": [
+      "The submission consists of a very short linear scan implementation with no docstring, type hints, or explanatory comments, which is atypical of LLM default templates.",
+      "Variable names are minimal ('i') and there are no idiosyncratic human quirks such as unconventional spacing or stray debug prints.",
+      "The code does not contain the canonical binary\u2011search structure present in all three AI baselines, indicating low structural overlap.",
+      "Absence of the typical multi\u2011line docstring, detailed comments, or descriptive variable names that LLMs often generate."
+    ],
+    "baseline_matches": []
+  }
+}

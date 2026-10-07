@@ -1,0 +1,43 @@
+{
+  "candidate_id": "cand_102_cheater_A",
+  "problem_id": "prob_1_two_sum",
+  "overall_risk": 0.3961,
+  "is_flagged": false,
+  "recommendation": "CLEAR",
+  "code_similarity_score": 0.0263,
+  "most_similar_candidate": "cand_101_honest",
+  "same_bug_score": 1.0,
+  "collusion_partner": "cand_103_cheater_B",
+  "ai_probability": 0.15,
+  "reasons": [
+    "Identical hidden-test failure pattern (100.0%) with 'cand_103_cheater_B' on tests [tc1_4_hidden_edge:IndexError]"
+  ],
+  "hidden_tests_summary": [
+    {
+      "test_id": "tc1_3",
+      "passed": true,
+      "error_type": "PASSED",
+      "error_message": null
+    },
+    {
+      "test_id": "tc1_4_hidden_edge",
+      "passed": false,
+      "error_type": "IndexError",
+      "error_message": "IndexError: list index out of range"
+    }
+  ],
+  "ai_detection_details": {
+    "confidence": 0.82,
+    "reasons": [
+      "Uses a simple brute\u2011force double loop rather than the canonical hash\u2011map solution seen in the AI baselines.",
+      "Contains an explicit bug comment (\"Bug: n+1 causes IndexError on test 4!\") which is atypical for AI\u2011generated code.",
+      "Lacks any docstring, type hints, or detailed explanatory comments that LLMs usually include.",
+      "Variable names are minimal and generic (\"n\", \"i\", \"j\") without the more descriptive naming patterns often produced by LLMs.",
+      "Formatting is inconsistent with AI style (e.g., missing spaces after commas in the return list)."
+    ],
+    "baseline_matches": [
+      "Function signature `def two_sum(nums, target):` matches the baselines.",
+      "Returns a list of two indices when a matching pair is found."
+    ]
+  }
+}

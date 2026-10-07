@@ -1,0 +1,46 @@
+{
+  "candidate_id": "cand_104_ai_user",
+  "problem_id": "prob_3_longest_substring",
+  "overall_risk": 0.3712,
+  "is_flagged": false,
+  "recommendation": "CLEAR",
+  "code_similarity_score": 0.8214,
+  "most_similar_candidate": "cand_102_cheater_A",
+  "same_bug_score": 0.0,
+  "collusion_partner": "None",
+  "ai_probability": 0.45,
+  "reasons": [
+    "High MOSS structural similarity (82.1%) with submission 'cand_102_cheater_A'",
+    "Detected evasion techniques: Variable/Identifier Renaming Detected, Possible Dead Code / Dummy Statement Injection"
+  ],
+  "hidden_tests_summary": [
+    {
+      "test_id": "tc3_3_hidden",
+      "passed": true,
+      "error_type": "PASSED",
+      "error_message": null
+    },
+    {
+      "test_id": "tc3_4_hidden_edge",
+      "passed": true,
+      "error_type": "PASSED",
+      "error_message": null
+    }
+  ],
+  "ai_detection_details": {
+    "confidence": 0.62,
+    "reasons": [
+      "The solution follows a classic sliding\u2011window pattern that is common in textbook explanations and LLM\u2011generated examples.",
+      "Docstring is concise and generic, matching the style often produced by language models.",
+      "Variable names (seen_characters, left_index, right_index, max_length) are clear but lack personal quirks or unconventional naming that a human might introduce.",
+      "Formatting is perfectly consistent (PEP8 compliant) with no stray spaces, missing blank lines, or other minor human errors.",
+      "The algorithmic structure (initialize set, move left pointer in a while loop, add current char, update max) mirrors the structure of the provided AI baselines, though the baselines use a dictionary instead of a set."
+    ],
+    "baseline_matches": [
+      "Uses a sliding window with two pointers (left/right or start/i) to maintain a current substring without repeats.",
+      "Maintains a collection of seen characters (set in candidate, dict in baselines) and removes leftmost characters when a duplicate is encountered.",
+      "Updates a max length variable after each iteration using max(max_length, right_index - left_index + 1) or similar expression.",
+      "Overall control flow: for each character, while duplicate exists, shrink window, then expand window and record length."
+    ]
+  }
+}

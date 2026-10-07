@@ -1,0 +1,39 @@
+{
+  "candidate_id": "cand_103_cheater_B",
+  "problem_id": "prob_4_rotated_search",
+  "overall_risk": 0.1094,
+  "is_flagged": false,
+  "recommendation": "CLEAR",
+  "code_similarity_score": 0.2353,
+  "most_similar_candidate": "cand_102_cheater_A",
+  "same_bug_score": 0.0,
+  "collusion_partner": "None",
+  "ai_probability": 0.1,
+  "reasons": [
+    "Clean submission with low structural similarity and normal test behavior."
+  ],
+  "hidden_tests_summary": [
+    {
+      "test_id": "tc4_3_hidden",
+      "passed": true,
+      "error_type": "PASSED",
+      "error_message": null
+    },
+    {
+      "test_id": "tc4_4_hidden_edge",
+      "passed": true,
+      "error_type": "PASSED",
+      "error_message": null
+    }
+  ],
+  "ai_detection_details": {
+    "confidence": 0.9,
+    "reasons": [
+      "The solution implements a straightforward linear scan rather than the expected O(log n) binary\u2011search approach shown in the baselines.",
+      "Variable names (temp_idx, idx) and the comment \"Renamed variables version of linear scan\" are informal and idiosyncratic, not typical of LLM\u2011generated boilerplate.",
+      "No docstring, type hints, or detailed explanatory comments are present, which are common in AI\u2011generated reference solutions.",
+      "The code lacks the canonical structure (initializing left/right pointers, while loop with mid calculation) that appears in all three baselines."
+    ],
+    "baseline_matches": []
+  }
+}

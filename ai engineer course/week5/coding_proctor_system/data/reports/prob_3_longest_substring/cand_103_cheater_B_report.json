@@ -1,0 +1,45 @@
+{
+  "candidate_id": "cand_103_cheater_B",
+  "problem_id": "prob_3_longest_substring",
+  "overall_risk": 0.0794,
+  "is_flagged": false,
+  "recommendation": "CLEAR",
+  "code_similarity_score": 0.0408,
+  "most_similar_candidate": "cand_102_cheater_A",
+  "same_bug_score": 0.0,
+  "collusion_partner": "None",
+  "ai_probability": 0.35,
+  "reasons": [
+    "Clean submission with low structural similarity and normal test behavior."
+  ],
+  "hidden_tests_summary": [
+    {
+      "test_id": "tc3_3_hidden",
+      "passed": true,
+      "error_type": "PASSED",
+      "error_message": null
+    },
+    {
+      "test_id": "tc3_4_hidden_edge",
+      "passed": true,
+      "error_type": "PASSED",
+      "error_message": null
+    }
+  ],
+  "ai_detection_details": {
+    "confidence": 0.62,
+    "reasons": [
+      "The submission lacks a docstring and type hints, which are common in AI\u2011generated boilerplate solutions.",
+      "It contains a dead\u2011code line (\"dummy_counter = 0 # Dead code\") and a casual comment, a typical human quirk.",
+      "Variable names (left_ptr, right_ptr, max_count) are more informal than the systematic names (start, i, ch) seen in the baselines.",
+      "The algorithm uses a set\u2011based sliding window, whereas the baselines all use a dictionary to track last indices; this divergence reduces direct copying.",
+      "Formatting is minimal and there are no explanatory comments, suggesting a quick hand\u2011written implementation rather than a polished AI template."
+    ],
+    "baseline_matches": [
+      "Both the candidate and baselines implement a sliding\u2011window approach to maintain a window of unique characters.",
+      "Both iterate over the string with a right pointer (or index) and adjust a left pointer when a duplicate is encountered.",
+      "Both update a maximum length variable after each expansion of the window.",
+      "The overall control flow (for loop over indices, inner while loop to shrink window, add current character, compute max) mirrors the structure of the baseline solutions."
+    ]
+  }
+}

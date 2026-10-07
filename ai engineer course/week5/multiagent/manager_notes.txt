@@ -1,0 +1,29 @@
+=== DIRECTOR MANAGER NOTES ===
+
+--- Output from WebSearch_Agent ---
+Task Assigned: Retrieve the most recent estimated population numbers for Tokyo, Japan and Paris, France (city proper, not metro area). Provide the values as of the latest available data (e.g., 2023 or 2024).
+Agent Output : **Tokyo, Japan (city proper)**  
+- Estimated population: **≈ 14 million** residents.  
+- Latest figure cited for the city‑proper population is **“over 14 million as of 2023.”** (source: recent summary of Tokyo’s demographic data).
+
+**Paris, France (city proper – the commune of Paris)**  
+- Estimated population: **≈ 2.1 million** residents.  
+- The most recent official estimate from France’s national statistics office (INSEE) puts the population of the Paris commune at **about 2.16 million in 2023** (the figure commonly reported for 2023‑2024).
+
+These numbers refer to the administrative boundaries of each city (the “city proper”), not the surrounding metropolitan or urban agglomerations.
+
+--- Output from Calculator_Agent ---
+Task Assigned: Using Tokyo population = 14,000,000 and Paris population = 2,160,000, compute (1) the percentage of Tokyo's population relative to Paris's population, i.e., (Tokyo/Paris)*100, and (2) the square root of the absolute difference between the two populations, i.e., sqrt(|Tokyo - Paris|). Return both results with appropriate precision.
+Agent Output : **Computation Summary**
+
+1. **Tokyo’s population as a percentage of Paris’s population**  
+   \[
+   \frac{14{,}000{,}000}{2{,}160{,}000} \times 100 \approx 648.15\%
+   \]
+
+2. **Square root of the absolute difference between the populations**  
+   \[
+   \sqrt{|14{,}000{,}000 - 2{,}160{,}000|} \approx 3{,}440.93
+   \]
+
+So, Tokyo’s population is about **648 %** of Paris’s, and the square root of the population difference is roughly **3,441**.

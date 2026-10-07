@@ -1,0 +1,47 @@
+{
+  "candidate_id": "cand_104_ai_user",
+  "problem_id": "prob_2_valid_parentheses",
+  "overall_risk": 0.2087,
+  "is_flagged": false,
+  "recommendation": "CLEAR",
+  "code_similarity_score": 0.3571,
+  "most_similar_candidate": "AI_Baseline_2",
+  "same_bug_score": 0.0,
+  "collusion_partner": "None",
+  "ai_probability": 0.45,
+  "reasons": [
+    "Clean submission with low structural similarity and normal test behavior."
+  ],
+  "hidden_tests_summary": [
+    {
+      "test_id": "tc2_3_hidden",
+      "passed": true,
+      "error_type": "PASSED",
+      "error_message": null
+    },
+    {
+      "test_id": "tc2_4_hidden_edge",
+      "passed": true,
+      "error_type": "PASSED",
+      "error_message": null
+    }
+  ],
+  "ai_detection_details": {
+    "confidence": 0.62,
+    "reasons": [
+      "The solution follows the classic stack\u2011based algorithm taught in textbooks for the Valid Parentheses problem.",
+      "Variable names are generic (bracket_map, stack, char, top_element) and lack personal naming quirks.",
+      "Docstring is brief and generic, typical of many LLM\u2011generated snippets.",
+      "No extra comments, debugging prints, or unconventional formatting that a human might leave.",
+      "Uses a concise conditional pop (`top_element = stack.pop() if stack else '#'`) which is a common pattern in AI\u2011generated code but also plausible for a human.",
+      "Overall structure (dict mapping, loop over characters, stack operations, final `return not stack`) mirrors the baseline solutions closely."
+    ],
+    "baseline_matches": [
+      "Mapping of closing brackets to opening brackets using a dictionary (bracket_map vs pairs).",
+      "Use of a list as a stack to push opening brackets and pop on closing brackets.",
+      "Iterating over each character in the input string and handling closing vs opening cases.",
+      "Returning the negation of the stack to indicate validity (`return not stack`).",
+      "Absence of length\u2011parity early exit (present in Baseline #2 but omitted here, matching Baseline #1 and #3)."
+    ]
+  }
+}

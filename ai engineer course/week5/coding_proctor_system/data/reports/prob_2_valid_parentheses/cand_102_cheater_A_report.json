@@ -1,0 +1,45 @@
+{
+  "candidate_id": "cand_102_cheater_A",
+  "problem_id": "prob_2_valid_parentheses",
+  "overall_risk": 0.0697,
+  "is_flagged": false,
+  "recommendation": "CLEAR",
+  "code_similarity_score": 0.0233,
+  "most_similar_candidate": "cand_101_honest",
+  "same_bug_score": 0.0,
+  "collusion_partner": "None",
+  "ai_probability": 0.25,
+  "reasons": [
+    "Clean submission with low structural similarity and normal test behavior."
+  ],
+  "hidden_tests_summary": [
+    {
+      "test_id": "tc2_3_hidden",
+      "passed": true,
+      "error_type": "PASSED",
+      "error_message": null
+    },
+    {
+      "test_id": "tc2_4_hidden_edge",
+      "passed": true,
+      "error_type": "PASSED",
+      "error_message": null
+    }
+  ],
+  "ai_detection_details": {
+    "confidence": 0.82,
+    "reasons": [
+      "The submission lacks any docstring, type hints, or extensive comments, which are common in AI\u2011generated boilerplate solutions.",
+      "Variable names are very generic (\"stack\", \"c\", \"last\") and there are no idiosyncratic naming quirks or personal comments that often appear in human code.",
+      "The implementation uses a direct string membership test ('({[') for opening brackets instead of the mapping dictionary pattern that appears in all three AI baselines.",
+      "Formatting is minimal and consistent with typical hand\u2011written code (no extra blank lines, no trailing spaces, no line\u2011length comments).",
+      "While the overall algorithm (stack\u2011based validation) matches the standard textbook solution, the concrete code structure differs from the baselines (no dict, no docstring, no early length\u2011odd check)."
+    ],
+    "baseline_matches": [
+      "Uses a stack to track opening brackets.",
+      "Iterates over each character in the input string.",
+      "Pushes opening brackets onto the stack and pops when a closing bracket is encountered.",
+      "Returns True/False based on whether the stack is empty at the end."
+    ]
+  }
+}

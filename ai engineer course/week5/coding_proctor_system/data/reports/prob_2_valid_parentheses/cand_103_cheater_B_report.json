@@ -1,0 +1,46 @@
+{
+  "candidate_id": "cand_103_cheater_B",
+  "problem_id": "prob_2_valid_parentheses",
+  "overall_risk": 0.0955,
+  "is_flagged": false,
+  "recommendation": "CLEAR",
+  "code_similarity_score": 0.087,
+  "most_similar_candidate": "cand_104_ai_user",
+  "same_bug_score": 0.0,
+  "collusion_partner": "None",
+  "ai_probability": 0.35,
+  "reasons": [
+    "Clean submission with low structural similarity and normal test behavior."
+  ],
+  "hidden_tests_summary": [
+    {
+      "test_id": "tc2_3_hidden",
+      "passed": true,
+      "error_type": "PASSED",
+      "error_message": null
+    },
+    {
+      "test_id": "tc2_4_hidden_edge",
+      "passed": true,
+      "error_type": "PASSED",
+      "error_message": null
+    }
+  ],
+  "ai_detection_details": {
+    "confidence": 0.62,
+    "reasons": [
+      "The code lacks a docstring and type hints, which are common in AI\u2011generated boilerplate solutions.",
+      "Variable names like `inp_str`, `stk`, and the deliberately unused `unused_flag` suggest a human author adding a quirky comment.",
+      "The implementation uses explicit character comparisons (`if ch == ')' and prev != '('`) instead of the more canonical dictionary mapping seen in the baselines.",
+      "Formatting is minimal and there are no extra explanatory comments, unlike the more verbose style typical of LLM outputs.",
+      "The overall algorithm (stack, iterate over characters, push openings, pop on closings) matches the standard textbook solution, which is also the structure of the AI baselines."
+    ],
+    "baseline_matches": [
+      "Uses a stack (`stk`/`stack`) to track opening brackets.",
+      "Iterates over each character in the input string.",
+      "Checks if a character is an opening bracket and pushes it onto the stack.",
+      "On encountering a closing bracket, verifies the stack is non\u2011empty and that the top matches the expected opening bracket.",
+      "Returns True/False based on whether the stack is empty at the end (`len(stk) == 0` vs `not stack`)."
+    ]
+  }
+}

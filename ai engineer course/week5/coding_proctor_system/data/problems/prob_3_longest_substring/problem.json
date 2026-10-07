@@ -1,0 +1,32 @@
+{
+  "problem_id": "prob_3_longest_substring",
+  "title": "Longest Substring Without Repeating Characters",
+  "description": "Given a string `s`, find the length of the longest substring without repeating characters.",
+  "entrypoint": "length_of_longest_substring",
+  "test_cases": [
+    {
+      "test_id": "tc3_1",
+      "input_data": "abcabcbb",
+      "expected_output": 3,
+      "is_hidden": false
+    },
+    {
+      "test_id": "tc3_2",
+      "input_data": "bbbbb",
+      "expected_output": 1,
+      "is_hidden": false
+    },
+    {
+      "test_id": "tc3_3_hidden",
+      "input_data": "pwwkew",
+      "expected_output": 3,
+      "is_hidden": true
+    },
+    {
+      "test_id": "tc3_4_hidden_edge",
+      "input_data": "",
+      "expected_output": 0,
+      "is_hidden": true
+    }
+  ]
+}

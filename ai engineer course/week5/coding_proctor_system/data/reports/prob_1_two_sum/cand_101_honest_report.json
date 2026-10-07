@@ -1,0 +1,47 @@
+{
+  "candidate_id": "cand_101_honest",
+  "problem_id": "prob_1_two_sum",
+  "overall_risk": 0.4523,
+  "is_flagged": false,
+  "recommendation": "MONITOR_MEDIUM_RISK",
+  "code_similarity_score": 1.0,
+  "most_similar_candidate": "AI_Baseline_2",
+  "same_bug_score": 0.0,
+  "collusion_partner": "None",
+  "ai_probability": 0.55,
+  "reasons": [
+    "High MOSS structural similarity (100.0%) with submission 'AI_Baseline_2'",
+    "Detected evasion techniques: Variable/Identifier Renaming Detected, Possible Dead Code / Dummy Statement Injection"
+  ],
+  "hidden_tests_summary": [
+    {
+      "test_id": "tc1_3",
+      "passed": true,
+      "error_type": "PASSED",
+      "error_message": null
+    },
+    {
+      "test_id": "tc1_4_hidden_edge",
+      "passed": true,
+      "error_type": "PASSED",
+      "error_message": null
+    }
+  ],
+  "ai_detection_details": {
+    "confidence": 0.62,
+    "reasons": [
+      "The solution follows the textbook one-pass hash\u2011map pattern that is the default example shown in most LLM tutorials for Two Sum.",
+      "Variable names (seen, idx, val, diff) are generic and match the common naming used in many AI\u2011generated snippets.",
+      "The code lacks any personal comments, docstrings, or idiosyncratic formatting quirks that a human might include.",
+      "The control flow (enumerate loop, compute complement, dictionary lookup, immediate return) is identical to the baseline implementations.",
+      "The fallback behavior (return [] when no pair is found) mirrors Baseline #2 exactly."
+    ],
+    "baseline_matches": [
+      "use of a dictionary (hash map) to store previously seen numbers",
+      "calculation of complement as `target - current_value`",
+      "checking `if complement in map` then returning the stored index and current index",
+      "single pass over the array using `enumerate`",
+      "returning an empty list if no solution is found (matching Baseline #2)"
+    ]
+  }
+}

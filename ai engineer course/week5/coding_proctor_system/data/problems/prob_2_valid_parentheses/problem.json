@@ -1,0 +1,32 @@
+{
+  "problem_id": "prob_2_valid_parentheses",
+  "title": "Valid Parentheses",
+  "description": "Given a string `s` containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.",
+  "entrypoint": "is_valid",
+  "test_cases": [
+    {
+      "test_id": "tc2_1",
+      "input_data": "()[]{}",
+      "expected_output": true,
+      "is_hidden": false
+    },
+    {
+      "test_id": "tc2_2",
+      "input_data": "(]",
+      "expected_output": false,
+      "is_hidden": false
+    },
+    {
+      "test_id": "tc2_3_hidden",
+      "input_data": "{[]}",
+      "expected_output": true,
+      "is_hidden": true
+    },
+    {
+      "test_id": "tc2_4_hidden_edge",
+      "input_data": "((((",
+      "expected_output": false,
+      "is_hidden": true
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "candidate_id": "cand_102_cheater_A",
+  "problem_id": "prob_3_longest_substring",
+  "overall_risk": 0.349,
+  "is_flagged": false,
+  "recommendation": "CLEAR",
+  "code_similarity_score": 0.8214,
+  "most_similar_candidate": "cand_104_ai_user",
+  "same_bug_score": 0.0,
+  "collusion_partner": "None",
+  "ai_probability": 0.25,
+  "reasons": [
+    "High MOSS structural similarity (82.1%) with submission 'cand_104_ai_user'",
+    "Detected evasion techniques: Variable/Identifier Renaming Detected, Possible Dead Code / Dummy Statement Injection"
+  ],
+  "hidden_tests_summary": [
+    {
+      "test_id": "tc3_3_hidden",
+      "passed": true,
+      "error_type": "PASSED",
+      "error_message": null
+    },
+    {
+      "test_id": "tc3_4_hidden_edge",
+      "passed": true,
+      "error_type": "PASSED",
+      "error_message": null
+    }
+  ],
+  "ai_detection_details": {
+    "confidence": 0.82,
+    "reasons": [
+      "The submission lacks any docstring, type hints, or explanatory comments, which are common in AI\u2011generated boilerplate solutions.",
+      "Variable names are short and generic (seen, l, res) rather than the more descriptive names (last_index, max_len, start) used in the baselines.",
+      "The implementation uses a set to track characters, whereas all three AI baselines use a dictionary to store last\u2011seen indices.",
+      "Formatting is minimalistic with no blank lines between logical sections, a style often seen in hand\u2011written code.",
+      "There are no extra test harnesses or example usage blocks that frequently appear in AI reference solutions."
+    ],
+    "baseline_matches": [
+      "Both the candidate and the baselines employ a sliding\u2011window / two\u2011pointer technique (left index l/start and right index r/i).",
+      "Both use a while loop to move the left pointer forward when a duplicate character is encountered.",
+      "Both update a running maximum of the window length after each iteration."
+    ]
+  }
+}
